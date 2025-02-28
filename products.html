@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - EC Web Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ddd;
+        }
+
+        #products {
+            padding: 2em;
+            text-align: center;
+        }
+
+        #products h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted minmax for wider cards */
+            gap: 2em;
+            padding: 1em;
+        }
+
+        .product-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1em;
+            text-align: left; /* Align content to left within the product card */
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item h3 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            font-size: 1.5em; /* Increased header size */
+        }
+
+        .product-item p {
+            margin-bottom: 1em;
+        }
+
+        .product-item .price {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 1.2em; /* Slightly larger price */
+        }
+
+        .product-item .cta-button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 0.75em 1.25em; /* Adjusted padding for buttons */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: inline-block; /* Make button inline-block */
+            margin-top: 1em;
+        }
+
+        .product-item .cta-button:hover {
+            background-color: #218838;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: '✅ '; /* Checkmark character */
+            margin-right: 0.5em;
+            color: green;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Additional Styles for the table-like layout */
+        .product-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columns for packages */
+            gap: 20px;
+        }
+
+        .package {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .package h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .package p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .package ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .package li {
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #444;
+        }
+
+        .package li::before {
+            content: '\2714'; /* Unicode character for checkmark */
+            color: green;
+            margin-right: 8px;
+        }
+
+        .package .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #0056b3;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .package .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .package .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .options {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .options h4 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .options ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .options b {
+            color: #333;
+        }
+
+        .fast-delivery {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .fast-delivery h4 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .fast-delivery ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fast-delivery li {
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .fast-delivery b {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>Our Website Packages</h2>
+        <p>Choose the perfect package to fit your needs.  We offer a variety of options to help you create the perfect online presence.</p>
+
+        <div class="product-table">
+            <!-- Starter Site Package -->
+            <div class="package">
+                <h3>Starter Site</h3>
+                <p>Perfect for personal portfolios or small websites. Get a simple, functional site with essential features.</p>
+                <ul>
+                    <li>Functional Website</li>
+                    <li>3 Pages</li>
+                    <li>2 Revisions</li>
+                    <li>Content upload (Up to 5 items)</li>
+                    <li>1 Plugins/extensions</li>
+                    <li>Opt-in form</li>
+                    <li>Speed optimization</li>
+                    <li>Hosting setup</li>
+                    <li>Social media icons</li>
+                </ul>
+                <span class="price">$80</span>
+                <a href="contact.html" class="cta-button">Order Now</a>
+            </div>
+
+            <!-- Business Builder Package -->
+            <div class="package">
+                <h3>Business Builder</h3>
+                <p>Ideal for small businesses or entrepreneurs who need a more comprehensive site with e-commerce options.</p>
+                <ul>
+                    <li>Functional Website</li>
+                    <li>5 Pages</li>
+                    <li>4 Revisions</li>
+                    <li>Content upload (Up to 10 items)</li>
+                    <li>3 Plugins/extensions</li>
+                    <li>E-commerce (Basic store setup)</li>
+                    <li>10 Products</li>
+                    <li>Payment Integration (1 payment gateway)</li>
+                    <li>Opt-in form</li>
+                    <li>Autoresponder (1 service)</li>
+                    <li>Speed optimization</li>
+                    <li>Hosting setup</li>
+                    <li>Social media icons</li>
+                </ul>
+                <span class="price">$200</span>
+                <a href="contact.html" class="cta-button">Order Now</a>
+            </div>
+
+            <!-- Pro Plus Website Package -->
+            <div class="package">
+                <h3>Pro Plus Website</h3>
+                <p>A full-featured, high-performance website with all the bells and whistles for growing businesses.</p>
+                <ul>
+                    <li>Functional Website</li>
+                    <li>10 Pages</li>
+                    <li>Unlimited Revisions</li>
+                    <li>Content upload (Unlimited)</li>
+                    <li>5 Plugins/extensions</li>
+                    <li>E-commerce (Full-featured store)</li>
+                    <li>50 Products</li>
+                    <li>Payment Integration (Up to 3 payment gateways)</li>
+                    <li>Opt-in form</li>
+                    <li>Autoresponder (Multiple services)</li>
+                    <li>Speed optimization</li>
+                    <li>Hosting setup</li>
+                    <li>Social media icons</li>
+                </ul>
+                <span class="price">$400</span>
+                <a href="contact.html" class="cta-button">Order Now</a>
+            </div>
+        </div>
+
+        <section class="options">
+            <h4>Additional Features:</h4>
+            <ul>
+                <li><b>Additional page:</b> $30 per page (+1 day per page)</li>
+                <li><b>Additional revision:</b> $20 per revision (No extra days)</li>
+                <li><b>Additional plugin installation:</b> $25 per plugin (+1 day per plugin)</li>
+                <li><b>E-commerce functionality:</b> $100 (for Basic package) (+3 days)</li>
+                <li><b>Additional product:</b> $5 per product (No extra days if adding a few products); +1 day for 20+ products</li>
+                <li><b>Payment Integration:</b> $50 per gateway (+2 days)</li>
+                <li><b>Autoresponder integration:</b> $40 per service (+1 day)</li>
+                <li><b>Additional stock media:</b>  No extra days (if it's a simple upload); +1 day if media needs customization or optimization</li>
+            </ul>
+        </section>
+
+        <section class="fast-delivery">
+            <h4>Extra Fast Delivery:</h4>
+            <ul>
+                <li><b>Basic:</b> Deliver in 2 days for an extra $40 (No extra days)</li>
+                <li><b>Standard:</b> Deliver in 3 days for an extra $75 (No extra days)</li>
+                <li><b>Premium:</b> Deliver in 5 days for an extra $100 (No extra days)</li>
+            </ul>
+        </section>
+    </section>
+
+    <footer>
+        <p>© 2025 EC Web Innovations. All rights reserved.</p>
+    </footer>
+</body>
+</html>
