@@ -54,89 +54,9 @@
             margin-bottom: 1em;
         }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted minmax for wider cards */
-            gap: 2em;
-            padding: 1em;
-        }
-
-        .product-item {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 1em;
-            text-align: left; /* Align content to left within the product card */
-            transition: transform 0.3s ease;
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-item h3 {
-            margin-top: 0;
-            margin-bottom: 0.5em;
-            font-size: 1.5em; /* Increased header size */
-        }
-
-        .product-item p {
-            margin-bottom: 1em;
-        }
-
-        .product-item .price {
-            font-weight: bold;
-            color: #007bff;
-            font-size: 1.2em; /* Slightly larger price */
-        }
-
-        .product-item .cta-button {
-            background-color: #28a745;
-            color: #fff;
-            padding: 0.75em 1.25em; /* Adjusted padding for buttons */
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            display: inline-block; /* Make button inline-block */
-            margin-top: 1em;
-        }
-
-        .product-item .cta-button:hover {
-            background-color: #218838;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1em;
-        }
-
-        .feature-list li {
-            margin-bottom: 0.5em;
-            display: flex;
-            align-items: center;
-        }
-
-        .feature-list li::before {
-            content: '✅ '; /* Checkmark character */
-            margin-right: 0.5em;
-            color: green;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Additional Styles for the table-like layout */
         .product-table {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columns for packages */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
         }
 
@@ -145,6 +65,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            text-align: left;
         }
 
         .package h3 {
@@ -179,10 +100,10 @@
             font-style: italic;
             color: #777;
             margin-top: 10px;
-            display: block; /* Make it a block element so it takes up the full width */
+            display: block;
         }
-        
-        .package .price {
+
+        .price {
             font-size: 1.5em;
             font-weight: bold;
             color: #0056b3;
@@ -190,7 +111,7 @@
             display: block;
         }
 
-        .package .cta-button {
+        .cta-button {
             display: inline-block;
             background-color: #007bff;
             color: #fff;
@@ -202,7 +123,7 @@
             margin-top: 20px;
         }
 
-        .package .cta-button:hover {
+        .cta-button:hover {
             background-color: #0056b3;
         }
 
@@ -255,6 +176,36 @@
         .fast-delivery b {
             color: #333;
         }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            width: 100%;
+            margin-top: 2em;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-bottom: 1em; /* Add padding to separate from copyright */
+        }
+
+        .footer-content p, .footer-content a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            padding-top: 1em;
+            border-top: 1px solid #666;
+        }
     </style>
 </head>
 <body>
@@ -271,13 +222,13 @@
 
     <section id="products">
         <h2>Our Website Packages</h2>
-        <p>Choose the perfect package to fit your needs.  We offer a variety of options to help you create the perfect online presence.</p>
+        <p>Choose the perfect package to fit your needs. We offer a variety of options to help you create the perfect online presence.</p>
 
         <div class="product-table">
             <!-- Starter Site Package -->
             <div class="package">
                 <h3>Starter Site</h3>
-                <p>Perfect for personal portfolios or small websites. Get a simple, functional site with essential features. </p>
+                <p>Perfect for personal portfolios or small websites. Get a simple, functional site with essential features.</p>
                 <ul>
                     <li>Functional Website</li>
                     <li>3 Pages</li>
@@ -368,7 +319,20 @@
     </section>
 
     <footer>
-        <p>© 2025 EC Web Innovations. All rights reserved.</p>
+        <div class="footer-content">
+            <div>
+                <p>Contact Information:</p>
+                <p>Ethan Christmas</p>
+                <p>Phone: 501-951-4633</p>
+                <p>Email: <a href="mailto:Ethan.christmas1@gmail.com">Ethan.christmas1@gmail.com</a></p>
+            </div>
+            <div>
+                <a href="https://www.fiverr.com/s/2KZLoye" target="_blank">Check out my Fiverr Gig!</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 EC Web Innovations. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
