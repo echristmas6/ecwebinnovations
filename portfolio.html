@@ -86,9 +86,29 @@
             color: #fff;
             text-align: center;
             padding: 1em 0;
-            position: fixed;
-            bottom: 0;
             width: 100%;
+            margin-top: 2em;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-bottom: 1em; /* Add padding to separate from copyright */
+        }
+
+        .footer-content p, .footer-content a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            padding-top: 1em;
+            border-top: 1px solid #666;
         }
     </style>
 </head>
@@ -125,7 +145,20 @@
     </section>
 
     <footer>
-        <p>© 2025 EC Web Innovations. All rights reserved.</p>
+        <div class="footer-content">
+            <div>
+                <p>Contact Information:</p>
+                <p>Ethan Christmas</p>
+                <p>Phone: 501-951-4633</p>
+                <p>Email: <a href="mailto:Ethan.christmas1@gmail.com">Ethan.christmas1@gmail.com</a></p>
+            </div>
+            <div>
+                <a href="https://www.fiverr.com/s/2KZLoye" target="_blank">Check out my Fiverr Gig!</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 EC Web Innovations. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
