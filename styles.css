@@ -50,6 +50,10 @@ footer {
     margin-bottom: 1em;
 }
 
+.portfolio-item h3 a {
+    color: #000;  /* Or any color that contrasts well */
+}
+
 .image-gallery {
     display: flex;          /* Use flexbox for horizontal arrangement */
     flex-wrap: wrap;       /* Allow images to wrap to the next line */
