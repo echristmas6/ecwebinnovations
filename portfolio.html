@@ -74,11 +74,19 @@
             transform: translateY(-5px);
         }
 
-        .portfolio-item img {
-            max-width: 100%;
+        /* Style for the image container */
+        .portfolio-item .image-container {
+            display: flex;             /* Use flexbox for horizontal arrangement */
+            flex-wrap: wrap;          /* Allow images to wrap to the next line if needed */
+            justify-content: center;  /* Center images horizontally */
+            margin-bottom: 0.5em;     /* Add spacing below the images */
+        }
+
+        .portfolio-item .image-container img {
+            max-width: 45%;           /* Adjust as needed - reduced to fit multiple images on a line */
             height: auto;
             border-radius: 5px;
-            margin-bottom: 0.5em;
+            margin: 0.25em;          /* Add spacing around each image */
         }
 
         footer {
@@ -129,7 +137,11 @@
         <div class="portfolio-grid">
             <!-- Example Portfolio Items -->
             <div class="portfolio-item">
-                <img src="images/tabletop sim home screen.jpeg" alt="Project 1">  <!-- Replace with your project image -->
+                <div class="image-container">
+                    <img src="images/tabletop sim home screen.jpeg" alt="Project 1 - Home Page">
+                    <img src="images/tabletop sim login screen.jpeg" alt="Project 1 - Login Page">
+                    <img src="images/tabletop sim start screen.jpeg" alt="Project 1 - Start Page">
+                </div>
                 <h3>Tabletop Simulator</h3>
                 <p>I created this website to hold multiple tabletop games for people to play and compete with each other in. Users are able to play multiple games such as, Blackjack, ConnectFour, and Cookie Clicker. All of the games work great, and allow the user to keep up with their records for each game.</p>
             </div>
